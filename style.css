@@ -7,28 +7,28 @@
 
 :root {
   /* 텍스트 박스 배경 */
-  --primary-color: #FCF6F5 !important;
+  --primary-color: #ebe9e9 !important;
   /* 글씨 색(진하게) */
-  --on-primary: #23864f;
-  --on-background: #23864f;
+  --on-primary: #111111;
+  --on-background: #111111;
   /* 타이틀 폰트 색 */
-  --on-background-alt: #134128;
+  --on-background-alt: #5CAB7D;
   
   /* 제일 밝은 바깥 배경 */
-  --background: #f7fffa;
+  --background: #F9F9F9 ;
   --box-shadow: 0 5px 20px 1px rgba(7, 6, 6, 0.5);
 }
 
 [data-theme="dark"] {
   /* 텍스트 박스 배경 */
-  --primary-color: #23864f;
+  --primary-color: #2C2C2C;
   /* 글씨 색깔 밝은걸로 */
-  --on-primary: #FCF6F5;
-  --on-background: #FCF6F5;
+  --on-primary: #EAEAEA;
+  --on-background: #EAEAEA;
     /* 타이틀 폰트 색 */
-  --on-background-alt: #f7fffa;
+  --on-background-alt: #F79C59;
   /* 전체 배경 색 */
-  --background: #134128;
+  --background: #1E1E1E;
 }
 
 
@@ -424,7 +424,4 @@ input:checked + .slider::before {
     transform: translate(-10px, -10px);
   }
 }
-  
-  
-  
   

@@ -19,10 +19,10 @@ function toggleDarkLightMode(mode) {
     nav.style.backgroundColor = mode === "dark" ? `rgb(0 0 0 / 50%)` : `rgb(255 255 255 / 50%)`;
     textBox.forEach(element => {
         //텍스트 박스 색 앞에가 다크, 뒤에 라이트
-        element.style.backgroundColor = mode === "dark" ? `#23864f` : `#FCF6F5`;
+        element.style.backgroundColor = mode === "dark" ? `#2C2C2C` : `#ebe9e9`;
     });
     button.forEach(element => {
-        element.style.backgroundColor = mode === "dark" ? `#23864f` : `#FCF6F5`;
+        element.style.backgroundColor = mode === "dark" ? `#2C2C2C` : `#ebe9e9`;
         element.style.color = mode === "dark" ? `white` : `black`;
     })
     toggleText.textContent = mode === "dark"  ? 'Dark Mode' : 'Light Mode';
@@ -120,6 +120,34 @@ function switchMode() {
         mode.href = "./은총라이트.png"
     }
 }
+
+// authentication check
+function checkPassword() {
+    const correctPassword = "1234";  // ✅ 원하는 비밀번호 설정
+    const userInput = document.getElementById("passwordInput").value;
+
+    if (userInput === correctPassword) {
+        // ✅ 비밀번호가 맞으면 로컬 스토리지에 저장하고 index.html로 이동
+        localStorage.setItem("authenticated", "true");
+        window.location.href = "index.html";
+    } else {
+        // ❌ 틀리면 오류 메시지 표시
+        document.getElementById("errorMsg").innerText = "비밀번호가 틀렸습니다!";
+    }
+}
+
+// ✅ index.html에서 인증 여부를 확인하는 코드 (index.html 상단에 추가)
+if (window.location.pathname.endsWith("index.html")) {
+    if (localStorage.getItem("authenticated") !== "true") {
+        window.location.href = "login.html";  // ❌ 인증되지 않았다면 로그인 페이지로 이동
+    }
+}
+// ✅ 로그아웃 기능 추가
+function logout() {
+    localStorage.removeItem("authenticated");
+    window.location.href = "login.html";
+}
+
 
 // Event Listener
 toggleSwitch.addEventListener("change", switchTheme);
