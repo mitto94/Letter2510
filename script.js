@@ -13,6 +13,13 @@ const h3Tag = document.querySelectorAll("h3");
 const lWord = document.getElementById("lastWord");
 const button = document.querySelectorAll("button");
 
+// ✅ index.html에서 인증 여부를 확인하는 코드 (index.html 상단에 추가)
+if (window.location.pathname.endsWith("index.html")) {
+    if (localStorage.getItem("authenticated") !== "true") {
+        window.location.href = "login.html";  // ❌ 인증되지 않았다면 로그인 페이지로 이동
+    }
+}
+
 // Dark Light Mode styles
 
 function toggleDarkLightMode(mode) {
@@ -136,12 +143,7 @@ function checkPassword() {
     }
 }
 
-// ✅ index.html에서 인증 여부를 확인하는 코드 (index.html 상단에 추가)
-if (window.location.pathname.endsWith("index.html")) {
-    if (localStorage.getItem("authenticated") !== "true") {
-        window.location.href = "login.html";  // ❌ 인증되지 않았다면 로그인 페이지로 이동
-    }
-}
+
 // ✅ 로그아웃 기능 추가
 function logout() {
     localStorage.removeItem("authenticated");
