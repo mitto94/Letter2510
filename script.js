@@ -14,11 +14,13 @@ const lWord = document.getElementById("lastWord");
 const button = document.querySelectorAll("button");
 
 // ✅ index.html에서 인증 여부를 확인하는 코드 (index.html 상단에 추가)
-if (window.location.pathname.endsWith("index.html")) {
-    if (localStorage.getItem("authenticated") !== "true") {
-        window.location.href = "login.html";  // ❌ 인증되지 않았다면 로그인 페이지로 이동
-    }
-}
+// console.log("a", window.location.pathname);
+// if (window.location.pathname.endsWith("index.html")) {
+//     console.log("b", localStorage.getItem("authenticated"));
+//     if (localStorage.getItem("authenticated") !== "true") {
+//         window.location.href = "login.html";  // ❌ 인증되지 않았다면 로그인 페이지로 이동
+//     }
+// }
 
 // Dark Light Mode styles
 
@@ -129,26 +131,26 @@ function switchMode() {
 }
 
 // authentication check
-function checkPassword() {
-    const correctPassword = "1234";  // ✅ 원하는 비밀번호 설정
-    const userInput = document.getElementById("passwordInput").value;
+// function checkPassword() {
+//     const correctPassword = "1234";  // ✅ 원하는 비밀번호 설정
+//     const userInput = document.getElementById("passwordInput").value;
 
-    if (userInput === correctPassword) {
-        // ✅ 비밀번호가 맞으면 로컬 스토리지에 저장하고 index.html로 이동
-        localStorage.setItem("authenticated", "true");
-        window.location.href = "index.html";
-    } else {
-        // ❌ 틀리면 오류 메시지 표시
-        document.getElementById("errorMsg").innerText = "비밀번호가 틀렸습니다!";
-    }
-}
+//     if (userInput === correctPassword) {
+//         // ✅ 비밀번호가 맞으면 로컬 스토리지에 저장하고 index.html로 이동
+//         localStorage.setItem("authenticated", "true");
+//         window.location.href = "index.html";
+//     } else {
+//         // ❌ 틀리면 오류 메시지 표시
+//         document.getElementById("errorMsg").innerText = "비밀번호가 틀렸습니다!";
+//     }
+// }
 
 
-// ✅ 로그아웃 기능 추가
-function logout() {
-    localStorage.removeItem("authenticated");
-    window.location.href = "login.html";
-}
+// // ✅ 로그아웃 기능 추가
+// function logout() {
+//     localStorage.removeItem("authenticated");
+//     window.location.href = "login.html";
+// }
 
 
 // Event Listener
