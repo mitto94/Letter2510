@@ -9,10 +9,10 @@
   /* 텍스트 박스 배경 */
   --primary-color: #ebe9e9 !important;
   /* 글씨 색(진하게) */
-  --on-primary: #111111;
-  --on-background: #111111;
+  --on-primary: #392c1f;
+  --on-background: #392c1f;
   /* 타이틀 폰트 색 */
-  --on-background-alt: #5CAB7D;
+  --on-background-alt: #8B6B4A;
   
   /* 제일 밝은 바깥 배경 */
   --background: #F9F9F9 ;
